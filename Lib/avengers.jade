@@ -1,0 +1,20 @@
+html(lang="es")
+head
+	meta(charset="UTF-8")
+	title Marvel Game Card
+	link(rel="stylesheet", href="css/app.css")
+	
+body
+	section.Layout
+		section.Layout-main
+			.Layout-status
+			.Layout-battle
+				.Battle
+					class= ""
+					.Battle-antagonist
+					.Battle-player
+						each card in [1,2,3,4,5]
+							include Card/template.jade 
+	script(src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
+	script(src="util/marvel-api.js")
+	script(src="app.js")

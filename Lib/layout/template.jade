@@ -1,0 +1,23 @@
+section(class="Layout")
+		section(class="Layout-angonist")
+			include ../Card/template.jade
+			include ../Card/template.jade
+			include ../Card/template.jade
+			include ../Card/template.jade
+			include ../Card/template.jade
+		section(class="Layout-main")
+			div(class="Layout-status") 
+				-name="Yuli"
+				each name in ["Furkan", "Yuli"] 
+					include ../status/template.jade	
+			div(class="Layout-battle") 
+				include ../battle/template.jade
+			div(class="Layout-phases") 
+					- text = "OMG el ataque fue muy fuerte me quitaste 980 puntos"
+					include ../phases/template.jade
+		section(class="Layout-player") 
+			include ../Card/template.jade
+			include ../Card/template.jade
+			include ../Card/template.jade
+			include ../Card/template.jade
+			include ../Card/template.jade
