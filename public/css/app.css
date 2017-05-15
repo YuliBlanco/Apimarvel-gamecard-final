@@ -1,0 +1,120 @@
+.Card {
+  width: 180px;
+  background: #7386d5;
+  border: 5px solid #ffefef;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border-radius: 0.5em;
+  color: #fff;
+  text-align: center;
+  padding: 0.5em;
+}
+.Card-description {
+  background-color: #ff2c2c;
+  padding: 0.5em;
+  font-size: 15px;
+  margin-bottom: 0.5em;
+  border: 2px solid #000;
+}
+.Card-name {
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0 0 0.5em 0;
+  font-size: 1em;
+}
+.Card-image {
+  width: 100%;
+}
+.Card-attack {
+  background: #000;
+  color: #fff;
+  font-size: 0.7em;
+}
+.Layout {
+  display: flex;
+  padding: 0.5em;
+  border: 1px solid #f00;
+  margin: 0.5em;
+  border: 1px solid #ffc0cb;
+  box-sizing: border-box;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  background-image: url("../images/marvelback.jpg");
+  background-size: cover;
+}
+.Layout > section {
+  margin: 0.5em;
+}
+.Layout-main {
+  display: flex;
+  justify-content: space-between;
+}
+.Layout-status {
+  border: 1px solid #008000;
+  box-sizing: border-box;
+  width: 200px;
+}
+.Layout-battle {
+  border: 1px solid #ffa500;
+  box-sizing: border-box;
+  flex: 1;
+  margin: 0 0.5em;
+  background-image: url("../images/imagen5.png");
+}
+.Layout-phases {
+  border: 1px solid #800080;
+  box-sizing: border-box;
+  width: 200px;
+  position: relative;
+}
+.Layout-angonist {
+  border: 1px solid #7fffd4;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.Layout-player {
+  border: 1px solid #808080;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.Status {
+  background: #ffa500;
+}
+.Status-player {
+  background: #f00;
+  padding: 0.5em;
+  color: #fff;
+  margin: 0;
+}
+.Status-points {
+  text-align: center;
+  padding: 0.5em;
+  margin: 0;
+}
+.Phases {
+  background: #fff;
+  border: 5px dashed #f00;
+  position: absolute;
+  right: 0;
+}
+.Battle {
+  padding: 0.5em;
+}
+.Battle-antagonist {
+  display: flex;
+  justify-content: space-between;
+}
+.Battle-player {
+  display: flex;
+  justify-content: space-between;
+}
+.Battle-player > div {
+  margin: 0;
+}
+body {
+  font-family: arial;
+  font-style: 16px;
+  margin: 0;
+}
