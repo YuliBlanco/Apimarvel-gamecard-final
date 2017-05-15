@@ -1,5 +1,5 @@
 .Card {
-  width: 180px;
+  width: 190px;
   background: #7386d5;
   border: 5px solid #ffefef;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -9,13 +9,14 @@
   padding: 0.5em;
 }
 .Card-description {
-  background-color: #ff2c2c;
+  background-color: #922962;
   padding: 0.5em;
   font-size: 15px;
   margin-bottom: 0.5em;
   border: 2px solid #000;
 }
 .Card-name {
+  text-overflow: ellipsis;
   color: #fff;
   text-transform: uppercase;
   margin: 0 0 0.5em 0;

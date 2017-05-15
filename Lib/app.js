@@ -3,21 +3,38 @@ var MarvelApi = window.MarvelApi
 var key = '6c1f0554796cc7bb3af7dedb9c17ef34'
 var api = new MarvelApi(key)
 api.findSeries('avengers')
-.then((results) => {
-	debugger
-var characters = results.data.results[0].characters.items
+.then((serie) => {
+	let serieImage = `url(${serie.thumbnail.path}.${serie.thumbnail.extension})`
+	$('.Layout').css('background-image', serieImage)
+var characters = serie.characters.items
 var promises = []
-for (var i in characters) {
-	var character = characters[i]
-	var characterUrl = `${character.resourceURI}?${key}`
-	promises.push(Promise.resolve($.get(characterUrl)))
+for (let character of characters) {
+	let promise = api.getResourceURI(character.resourceURI)
+	promises.push(promise)
 }
 return Promise.all(promises)
+})
+.then((characters) =>{
+	return characters.filter((character) => {
+		return !!character.thumbnail 
+	})
+})
 .then((characters) => {
-	console.log(characters)
+	$('.Card').each((i, item)=> {
+		let character =characters[i]
+		let $this = $(item)
+		let $image = $this.find('.Card-image')
+		let $description = $this.find('.Card-description')
+		let $name = $this.find('.Card-name')
+	
+		$image.attr('src', `${character.thumbnail.path}.${character.thumbnail.extension}`)
+		$name.text(character.name)
+		$description.text(character.description)
+	})
 })
 .catch((err) => {
-	debugger
 	console.error(err)
 })
-})
+
+
+	

@@ -55,5 +55,13 @@ gulp.task('babelecma', () => {
         .pipe(gulp.dest('public'));
 });
 
+gulp.task('babelmarvelapi', () => {
+    return gulp.src('lib/util/marvel-api.js')
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(gulp.dest('public/util'));
+});
+
 // Tareas por defecto
-gulp.task('default', ['stylus2css','jade','watch','babelecma']);
+gulp.task('default', ['stylus2css','jade','watch','babelecma','babelmarvelapi']);
