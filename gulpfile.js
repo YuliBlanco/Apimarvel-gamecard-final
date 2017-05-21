@@ -5,7 +5,7 @@ var connect = require('connect');
 var nib = require('nib');
 var api = require('marvel-api');
 var babel = require('gulp-babel');
-
+var template = require('es6-template-strings');
 var marvel = api.createClient({
   publicKey: '6c1f0554796cc7bb3af7dedb9c17ef34'
 , privateKey: '247df6ce58992d53fdb7f78f8f9371a0ed072f11'
@@ -42,7 +42,7 @@ gulp.task('watch', function() {
 gulp.task('jade', function() {
     return gulp.src('./lib/*.jade')
         .pipe(jade()) // pip to jade plugin
-        .pipe(gulp.dest('./public')); // tell gulp our output folder
+        .pipe(gulp.dest('./')); // tell gulp our output folder
 });
 
 

@@ -18,16 +18,39 @@ var MarvelApi = function () {
     key: 'findSeries',
     value: function findSeries(title) {
       var url = this.baseUrl + 'series?title=' + title + '&apikey=' + this.key;
-      return Promise.resolve($.get(url)).then(function (res) {
-        return res.data.results[0];
-      });
+
+      //siempre pide datos a la API de Marvel
+
+      if (localStorage[url]) {
+        var datos = localStorage[url];
+        datos = JSON.parse(datos);
+        console.log('Hola desde el cache');
+        return Promise.resolve(datos);
+      } else {
+        return Promise.resolve($.get(url)).then(function (res) {
+
+          var datos = res.data.results[0];
+          datos = JSON.stringify(datos);
+          localStorage[url] = datos;
+          return Promise.resolve(datos);
+        });
+      }
     }
   }, {
     key: 'getResourceURI',
     value: function getResourceURI(resourceURI) {
       var url = resourceURI + '?apikey=' + this.key;
+      if (localStorage[url]) {
+        var datos = localStorage[url];
+        datos = JSON.parse(datos);
+        console.log('Hola desde el cache');
+        return Promise.resolve(datos);
+      }
       return Promise.resolve($.get(url)).then(function (res) {
-        return res.data.results[0];
+        var datos = res.data.results[0];
+        datos = JSON.stringify(datos);
+        localStorage[url] = datos;
+        return Promise.resolve(datos);
       });
     }
   }]);
